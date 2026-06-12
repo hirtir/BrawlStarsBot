@@ -1,0 +1,33 @@
+ЛОГИКА БОТА (два клика + старт)
+=============================
+
+После катки за ГРОМА:
+  1) images\brawlers\menu\grom.png      — главный экран
+  2) images\brawlers\damian.png         — выбор персонажа
+  3) images\start.png
+  4) images\play.png
+
+После катки за ДАМИАНА:
+  1) menu\damian.png
+  2) brawlers\larry.png
+  3) start → play
+
+После катки за ЛАРРИ:
+  1) menu\larry.png
+  2) brawlers\grom.png
+  3) start → play
+
+НУЖНЫ ВСЕ 6 ФАЙЛОВ БОЙЦОВ:
+  menu\grom.png   menu\damian.png   menu\larry.png
+  brawlers\grom.png  brawlers\damian.png  brawlers\larry.png
+
+(скрины в menu и brawlers РАЗНЫЕ — с разных экранов игры)
+
+КНОПКИ → images\
+  start.png, play.png, next.png, exit_menu.png
+  ult.png, giper.png — в бою (клик в зону ULT_AREA / GIPER_AREA)
+  again.png — вылет игры (автовосстановление)
+  pobedi.png, pobedi2.png, pobedi3.png — победа на главном меню
+
+КЕЙСЫ → images\case\
+  case_01.png … case_41.png (после катки в режиме pobedi)
