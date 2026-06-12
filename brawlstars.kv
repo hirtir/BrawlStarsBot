@@ -1,0 +1,215 @@
+#:kivy 2.3.0
+
+<BrawlerSwitcherApp>:
+    orientation: 'vertical'
+    padding: 20
+    spacing: 15
+
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.1, 0.15, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Label:
+        text: 'Brawl Stars Bot'
+        font_size: 28
+        bold: True
+        color: 1, 0.85, 0, 1
+        size_hint_y: None
+        height: 50
+
+    Label:
+        text: root.status_text
+        font_size: 16
+        color: 0.8, 0.8, 0.8, 1
+        size_hint_y: None
+        height: 40
+
+    Label:
+        text: 'Сетка: ' + root.grid_info
+        font_size: 14
+        color: 0.6, 0.6, 0.6, 1
+        size_hint_y: None
+        height: 30
+
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        size_hint_y: None
+        height: 200
+
+        BoxLayout:
+            spacing: 10
+            size_hint_y: None
+            height: 50
+
+            Label:
+                text: 'Столбцы:'
+                font_size: 14
+                color: 0.8, 0.8, 0.8, 1
+                size_hint_x: 0.3
+
+            TextInput:
+                id: cols_input
+                text: '3'
+                font_size: 16
+                multiline: False
+                size_hint_x: 0.3
+
+            Label:
+                text: 'Строки:'
+                font_size: 14
+                color: 0.8, 0.8, 0.8, 1
+                size_hint_x: 0.3
+
+            TextInput:
+                id: rows_input
+                text: '2'
+                font_size: 16
+                multiline: False
+                size_hint_x: 0.3
+
+        BoxLayout:
+            spacing: 10
+            size_hint_y: None
+            height: 50
+
+            Label:
+                text: 'Задержка (сек):'
+                font_size: 14
+                color: 0.8, 0.8, 0.8, 1
+                size_hint_x: 0.5
+
+            TextInput:
+                id: delay_input
+                text: '7'
+                font_size: 16
+                multiline: False
+                size_hint_x: 0.3
+
+        BoxLayout:
+            spacing: 10
+            size_hint_y: None
+            height: 50
+
+            Label:
+                text: 'Кнопка выбора X:'
+                font_size: 14
+                color: 0.8, 0.8, 0.8, 1
+                size_hint_x: 0.4
+
+            TextInput:
+                id: select_x
+                text: '280'
+                font_size: 16
+                multiline: False
+                size_hint_x: 0.25
+
+            Label:
+                text: 'Y:'
+                font_size: 14
+                color: 0.8, 0.8, 0.8, 1
+                size_hint_x: 0.1
+
+            TextInput:
+                id: select_y
+                text: '500'
+                font_size: 16
+                multiline: False
+                size_hint_x: 0.25
+
+    BoxLayout:
+        spacing: 10
+        size_hint_y: None
+        height: 50
+
+        Label:
+            text: 'Начало сетки X:'
+            font_size: 14
+            color: 0.8, 0.8, 0.8, 1
+            size_hint_x: 0.4
+
+        TextInput:
+            id: grid_x
+            text: '500'
+            font_size: 16
+            multiline: False
+            size_hint_x: 0.25
+
+        Label:
+            text: 'Y:'
+            font_size: 14
+            color: 0.8, 0.8, 0.8, 1
+            size_hint_x: 0.1
+
+        TextInput:
+            id: grid_y
+            text: '350'
+            font_size: 16
+            multiline: False
+            size_hint_x: 0.25
+
+    BoxLayout:
+        spacing: 10
+        size_hint_y: None
+        height: 50
+
+        Label:
+            text: 'Шаг X:'
+            font_size: 14
+            color: 0.8, 0.8, 0.8, 1
+            size_hint_x: 0.3
+
+        TextInput:
+            id: step_x
+            text: '440'
+            font_size: 16
+            multiline: False
+            size_hint_x: 0.3
+
+        Label:
+            text: 'Шаг Y:'
+            font_size: 14
+            color: 0.8, 0.8, 0.8, 1
+            size_hint_x: 0.3
+
+        TextInput:
+            id: step_y
+            text: '365'
+            font_size: 16
+            multiline: False
+            size_hint_x: 0.3
+
+    Widget:
+        size_hint_y: None
+        height: 10
+
+    Button:
+        text: 'СТАРТ'
+        font_size: 22
+        bold: True
+        size_hint_y: None
+        height: 60
+        background_color: 0.2, 0.7, 0.2, 1
+        on_press: root.start_bot()
+
+    Button:
+        text: 'СТОП'
+        font_size: 22
+        bold: True
+        size_hint_y: None
+        height: 60
+        background_color: 0.8, 0.2, 0.2, 1
+        on_press: root.stop_bot()
+
+    Label:
+        text: root.log_text
+        font_size: 12
+        color: 0.5, 1, 0.5, 1
+        size_hint_y: None
+        height: 120
+        text_size: self.width, None
+        halign: 'left'
+        valign: 'top'
